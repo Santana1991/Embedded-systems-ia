@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>display-7-seg</name>
-            <creation-uuid>47a0dfdd-ff10-4084-99f5-efa19dea956e</creation-uuid>
+            <name>conuter</name>
+            <creation-uuid>c1be7ef6-23e2-4ff5-8a2b-9f49fd17cad0</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
