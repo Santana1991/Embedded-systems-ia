@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=counter.c
+SOURCEFILES_QUOTED_IF_SPACED=counter.c counter-and-anti-rebound.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/counter.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/counter.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/counter.p1 ${OBJECTDIR}/counter-and-anti-rebound.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/counter.p1.d ${OBJECTDIR}/counter-and-anti-rebound.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/counter.p1
+OBJECTFILES=${OBJECTDIR}/counter.p1 ${OBJECTDIR}/counter-and-anti-rebound.p1
 
 # Source Files
-SOURCEFILES=counter.c
+SOURCEFILES=counter.c counter-and-anti-rebound.c
 
 
 
@@ -96,6 +96,14 @@ ${OBJECTDIR}/counter.p1: counter.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/counter.d ${OBJECTDIR}/counter.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/counter.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/counter-and-anti-rebound.p1: counter-and-anti-rebound.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/counter-and-anti-rebound.p1.d 
+	@${RM} ${OBJECTDIR}/counter-and-anti-rebound.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/counter-and-anti-rebound.p1 counter-and-anti-rebound.c 
+	@-${MV} ${OBJECTDIR}/counter-and-anti-rebound.d ${OBJECTDIR}/counter-and-anti-rebound.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/counter-and-anti-rebound.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/counter.p1: counter.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -104,6 +112,14 @@ ${OBJECTDIR}/counter.p1: counter.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/counter.p1 counter.c 
 	@-${MV} ${OBJECTDIR}/counter.d ${OBJECTDIR}/counter.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/counter.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/counter-and-anti-rebound.p1: counter-and-anti-rebound.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/counter-and-anti-rebound.p1.d 
+	@${RM} ${OBJECTDIR}/counter-and-anti-rebound.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/counter-and-anti-rebound.p1 counter-and-anti-rebound.c 
+	@-${MV} ${OBJECTDIR}/counter-and-anti-rebound.d ${OBJECTDIR}/counter-and-anti-rebound.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/counter-and-anti-rebound.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

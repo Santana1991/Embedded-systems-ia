@@ -1906,53 +1906,62 @@ extern __bank0 __bit __timeout;
 # 10 "counter.c" 2
 
 unsigned char counter = 0;
- const unsigned char DISPLAY [10] ={
-    0x3F,
-    0x06,
-    0x5B,
-    0x4F,
-    0x66,
-    0x6D,
-    0x7D,
-    0x07,
-    0x7F,
-    0x6F,
-    0x00,
+unsigned char NUMEROS [10] ={
+    0x3F;
+    0x06;
+    0x5B;
+    0x4F;
+    0x66;
+    0x6D;
+    0x7D;
+    0x07;
+    0x7F;
+    0x6F;
+    0x00;
 };
-unsigned char get_input_debounced(void){
-    unsigned char a = PORTAbits.RA0;
-_delay((unsigned long)((debounce_ms)*(20000000/4000.0)));
-unsigned char b = PORTAbits.RA0;
-if(a==b){
-    return b;
-}else{
-    return 0xff;
-};
-}
+
 void main(void) {
     TRISA = 0x01;
     TRISB = 0x00;
-    PORTB = DISPLAY[0];
-
-    unsigned char counter = 0;
-   unsigned char prev = 0;
+    PORTB = 0x3F;
 
     while(1) {
-        unsigned char stable = get_input_debounced();
+        unsigned char button = PORTAbits.RA0;
 
-        if (stable!=0xff){
+        if(button == 1) {
+            _delay((unsigned long)((200)*(20000000/4000.0)));
+            counter++;
 
-            if(prev == 0 && stable == 1){
-                counter++;
-                PORTB = DISPLAY[counter];
+            if(counter == 10) {
+                counter = 0;
             }
-            prev = stable;
-            if(counter==10){
-                counter=0;
-                PORTB = DISPLAY[0];
+
+            switch(counter) {
+                case 0: PORTB = 0x3F;
+                  break;
+                case 1: PORTB = 0x06;
+                  break;
+                case 2: PORTB = 0x5B;
+                  break;
+                case 3: PORTB = 0x4F;
+                  break;
+                case 4: PORTB = 0x66;
+                  break;
+                case 5: PORTB = 0x6D;
+                  break;
+                case 6: PORTB = 0x7D;
+                  break;
+                case 7: PORTB = 0x07;
+                  break;
+                case 8: PORTB = 0x7F;
+                  break;
+                case 9: PORTB = 0x6F;
+                  break;
+                default: PORTB = 0x00;
+                  break;
             }
+
+            while(PORTAbits.RA0 == 1);
         }
-
-
     }
 }
