@@ -5,11 +5,11 @@
  * Created on 30 de octubre de 2025, 06:25 AM
  */
 
-#define _XTAL_FREQ 20000000  
+#define _XTAL_FREQ 20000000  // Frecuencia del cristal (ajústala a tu caso real)
 #include <xc.h>
-#define DEBOUNCE_MS 20
+
 unsigned char counter = 0;
- const unsigned char DISPLAY [10] ={
+unsigned char NUMEROS [10] ={
     0x3F,
     0x06,
     0x5B,
@@ -22,40 +22,50 @@ unsigned char counter = 0;
     0x6F,
     0x00,
 };
-unsigned char get_input_debounced(void){
-    unsigned char a = PORTAbits.RA0;
-__delay_ms(debounce_ms);
-unsigned char b = PORTAbits.RA0;
-if(a==b){ // Estabilidad en el pin 
-    return b;
-}else{
-    return 0xff; //insetabilidad en el pin
-};
-}
+
 void main(void) {
-    TRISA = 0x01;  //boton
-    TRISB = 0x00;  //display
-    PORTB = DISPLAY[0];   
+    TRISA = 0x01;   // RA0 como entrada
+    TRISB = 0x00;   // Puerto B como salida
+    PORTB = 0x3F;   // Mostrar "0" inicialmente
     
-    unsigned char counter = 0;
-   unsigned char prev = 0;
-   
     while(1) {
-        unsigned char stable = get_input_debounced();
+        unsigned char button = PORTAbits.RA0;
         
-        if (stable!=0xff){
+        if(button == 1) {
+            __delay_ms(200);   // Antirrebote simple
+            counter++;
             
-            if(prev == 0 && stable == 1){
-                counter++; //acumulador
-                PORTB = DISPLAY[counter];
+            if(counter == 10) {
+                counter = 0;
             }
-            prev = stable;
-            if(counter==10){
-                counter=0;
-                PORTB = DISPLAY[0];
+            
+            switch(counter) {
+                case 0: PORTB = 0x3F; 
+                  break; // 0
+                case 1: PORTB = 0x06; 
+                  break; // 1
+                case 2: PORTB = 0x5B;
+                  break; // 2
+                case 3: PORTB = 0x4F;
+                  break; // 3
+                case 4: PORTB = 0x66; 
+                  break; // 4
+                case 5: PORTB = 0x6D; 
+                  break; // 5
+                case 6: PORTB = 0x7D; 
+                  break; // 6
+                case 7: PORTB = 0x07; 
+                  break; // 7
+                case 8: PORTB = 0x7F; 
+                  break; // 8
+                case 9: PORTB = 0x6F; 
+                  break; // 9
+                default: PORTB = 0x00; 
+                  break;
             }
+            
+            // Esperar a que se suelte el botón
+            while(PORTAbits.RA0 == 1);
         }
-       
-        
     }
 }
