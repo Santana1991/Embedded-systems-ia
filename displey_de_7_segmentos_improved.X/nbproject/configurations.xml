@@ -17,7 +17,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>DISPLAY.c</itemPath>
+      <itemPath>displaey_improved.c</itemPath>
       <itemPath>PIC16F877ACONFIG.H</itemPath>
     </logicalFolder>
   </logicalFolder>
