@@ -1,0 +1,29 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-1" mainComp="false" Show_id="false" Show_Val="false" Pos="-212,-192" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-1" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Push" CircId="Push-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-220,-76" rotation="0" hflip="1" vflip="1" label="Push-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="Resistor" CircId="Resistor-3" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-96,-4" rotation="0" hflip="1" vflip="1" label="Resistor-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="240 Ω" />
+
+<item itemtype="MCU" CircId="p16F877-5" mainComp="false" Show_id="true" Show_Val="false" Pos="-156,-200" rotation="0" hflip="1" vflip="1" label="p16F877-5" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="8 MHz" Program="control_de_led.X/dist/default/production/control_de_led.X.production.hex" Auto_Load="false" saveEepr="true" Clk_Out="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Led" CircId="Led-6" mainComp="false" Show_id="false" Show_Val="false" Pos="-4,-84" rotation="0" hflip="1" vflip="1" label="Led-6" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="false" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="Ground" CircId="Ground-7" mainComp="false" Show_id="false" Show_Val="false" Pos="24,-44" rotation="0" hflip="1" vflip="1" label="Ground-7" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-8" mainComp="false" Show_id="false" Show_Val="false" Pos="-340,-80" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-8" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="Led-6-rPin" endpinid="Ground-7-Gnd" pointList="12,-84,24,-84,24,-60" />
+
+<item itemtype="Connector" uid="Connector-49" startpinid="Resistor-3-rPin" endpinid="Led-6-lPin" pointList="-80,-4,-20,-4,-20,-84" />
+
+<item itemtype="Connector" uid="Connector-51" startpinid="p16F877-5-PORTD0" endpinid="Resistor-3-lPin" pointList="-164,-48,-208,-48,-208,-4,-112,-4" />
+
+<item itemtype="Connector" uid="Connector-52" startpinid="Push-2-switch0pinN" endpinid="p16F877-5-PORTC0" pointList="-204,-76,-164,-76,-164,-80" />
+
+<item itemtype="Connector" uid="Connector-60" startpinid="Fixed Voltage-1-outnod" endpinid="p16F877-5-MCLR" pointList="-196,-192,-164,-192" />
+
+<item itemtype="Connector" uid="Connector-61" startpinid="Push-2-pinP0" endpinid="Fixed Voltage-8-outnod" pointList="-236,-76,-324,-76,-324,-80" />
+
+</circuit>

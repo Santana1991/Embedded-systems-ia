@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=displaey_improved.c PIC16F877ACONFIG.H
+SOURCEFILES_QUOTED_IF_SPACED=displaey_improved.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/displaey_improved.p1 ${OBJECTDIR}/PIC16F877ACONFIG.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/displaey_improved.p1.d ${OBJECTDIR}/PIC16F877ACONFIG.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/displaey_improved.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/displaey_improved.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/displaey_improved.p1 ${OBJECTDIR}/PIC16F877ACONFIG.o
+OBJECTFILES=${OBJECTDIR}/displaey_improved.p1
 
 # Source Files
-SOURCEFILES=displaey_improved.c PIC16F877ACONFIG.H
+SOURCEFILES=displaey_improved.c
 
 
 

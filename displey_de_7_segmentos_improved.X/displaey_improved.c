@@ -4,11 +4,9 @@
  *
  * Created on 19 de noviembre de 2025, 08:14 PM
  */
-
-
-#include <xc.h>
-#define _XTAL_FREQ 4000000
 #include "PIC16F877ACONFIG.H"
+#include <xc.h>
+#define  __XTAL_FREQ 8000000
 
 const unsigned char tabla[10] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
 

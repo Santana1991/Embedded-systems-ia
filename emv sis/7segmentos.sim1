@@ -1,0 +1,39 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="p16F877-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-100,-160" rotation="0" hflip="1" vflip="1" label="p16F877-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="4 MHz" Program="display_7segmentos.X/dist/default/production/display_7segmentos.X.production.hex" Auto_Load="false" saveEepr="true" Clk_Out="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Seven Segment" CircId="Seven Segment-2" mainComp="false" Show_id="false" Show_Val="false" Pos="136,-120" rotation="360" hflip="1" vflip="1" label="Seven Segment-2" idLabPos="20,-44" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" NumDisplays="1" Vertical_Pins="false" CommonCathode="true" Threshold="2.4 V" MaxCurrent="20 mA" Resistance="1 Ω" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-136,-156" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-3" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Push" CircId="Push-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-224,-112" rotation="-360" hflip="1" vflip="1" label="Push-5" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-6" mainComp="false" Show_id="false" Show_Val="false" Pos="-288,-112" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-6" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Ground" CircId="Ground-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-4,188" rotation="0" hflip="1" vflip="1" label="Ground-7" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="Fixed Voltage-3-outnod" endpinid="p16F877-1-MCLR" pointList="-120,-156,-108,-156,-108,-152" />
+
+<item itemtype="Connector" uid="Connector-168" startpinid="Ground-7-Gnd" endpinid="Seven Segment-2-pin_commona" pointList="-4,172,144,172,144,-88" />
+
+<item itemtype="Connector" uid="Connector-288" startpinid="Fixed Voltage-6-outnod" endpinid="Push-5-pinP0" pointList="-272,-112,-240,-112" />
+
+<item itemtype="Connector" uid="Connector-289" startpinid="Push-5-switch0pinN" endpinid="p16F877-1-PORTA0" pointList="-208,-112,-208,-144,-108,-144" />
+
+<item itemtype="Connector" uid="Connector-290" startpinid="p16F877-1-PORTB0" endpinid="Seven Segment-2-pin_a" pointList="-44,-96,32,-96,32,-144,112,-144" />
+
+<item itemtype="Connector" uid="Connector-291" startpinid="p16F877-1-PORTB1" endpinid="Seven Segment-2-pin_b" pointList="-44,-104,44,-104,44,-136,112,-136" />
+
+<item itemtype="Connector" uid="Connector-292" startpinid="p16F877-1-PORTB2" endpinid="Seven Segment-2-pin_c" pointList="-44,-112,16,-112,16,-128,112,-128" />
+
+<item itemtype="Connector" uid="Connector-293" startpinid="p16F877-1-PORTB3" endpinid="Seven Segment-2-pin_d" pointList="-44,-120,112,-120" />
+
+<item itemtype="Connector" uid="Connector-294" startpinid="p16F877-1-PORTB4" endpinid="Seven Segment-2-pin_e" pointList="-44,-128,4,-128,4,-112,112,-112" />
+
+<item itemtype="Connector" uid="Connector-295" startpinid="p16F877-1-PORTB5" endpinid="Seven Segment-2-pin_f" pointList="-44,-136,12,-136,12,-84,56,-84,56,-104,112,-104" />
+
+<item itemtype="Connector" uid="Connector-296" startpinid="p16F877-1-PORTB6" endpinid="Seven Segment-2-pin_g" pointList="-44,-144,-12,-144,-12,-76,92,-76,92,-96,112,-96" />
+
+<item itemtype="Connector" uid="Connector-297" startpinid="p16F877-1-PORTB7" endpinid="Seven Segment-2-pin_dot" pointList="-44,-152,-20,-152,-20,-56,128,-56,128,-88" />
+
+</circuit>
