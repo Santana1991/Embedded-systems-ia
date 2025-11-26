@@ -18,7 +18,7 @@
 
 <item itemtype="Connector" uid="Connector-288" startpinid="Fixed Voltage-6-outnod" endpinid="Push-5-pinP0" pointList="-272,-112,-240,-112" />
 
-<item itemtype="Connector" uid="Connector-289" startpinid="Push-5-switch0pinN" endpinid="p16F877-1-PORTA0" pointList="-208,-112,-208,-144,-108,-144" />
+<item itemtype="Connector" uid="Connector-289" startpinid="Push-5-switch0pinN" endpinid="p16F877-1-PORTA0" pointList="-208,-112,-208,-128,-108,-128,-108,-144" />
 
 <item itemtype="Connector" uid="Connector-290" startpinid="p16F877-1-PORTB0" endpinid="Seven Segment-2-pin_a" pointList="-44,-96,32,-96,32,-144,112,-144" />
 
