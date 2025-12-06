@@ -1,0 +1,43 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="208,-8" rotation="90" hflip="1" vflip="1" label="mega328-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="16 MHz" Program="../Sistemas_embebidos/emv sis/Lectura_anal_gica_con_potenci_metro_y_visualizaci_n_en_LCD_16x2/Lectura_anal_gica_con_potenci_metro_y_visualizaci_n_en_LCD_16x2.ino.with_bootloader.standard.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Hd44780" CircId="Hd44780-3" mainComp="false" Show_id="true" Show_Val="false" Pos="96,-144" rotation="0" hflip="1" vflip="1" label="Hd44780-3" idLabPos="70,-82" labelrot="0" valLabPos="-16,20" valLabRot="0" Rows="2" Cols="16" />
+
+<item itemtype="Fixed Voltage" CircId="Fixed Voltage-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-136,-68" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-4" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
+
+<item itemtype="Potentiometer" CircId="Potentiometer-5" mainComp="false" ShowProp="Resistance" Show_id="false" Show_Val="true" Pos="-60,-68" rotation="0" hflip="1" vflip="1" label="Potentiometer-5" idLabPos="-16,-40" labelrot="0" valLabPos="15,-20" valLabRot="0" Resistance="10 kΩ" Value_Ohm="0 Ω" Slider="false" Scale="1" />
+
+<item itemtype="Ground" CircId="Ground-6" mainComp="false" Show_id="false" Show_Val="false" Pos="4,-104" rotation="0" hflip="1" vflip="1" label="Ground-6" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Ground" CircId="Ground-7" mainComp="false" Show_id="false" Show_Val="false" Pos="-20,-40" rotation="0" hflip="1" vflip="1" label="Ground-7" idLabPos="-16,8" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="mega328-1-PORTD1" endpinid="Hd44780-3-dataPin1" pointList="184,-16,184,-72,144,-72,144,-136" />
+
+<item itemtype="Connector" uid="Connector-2" startpinid="mega328-1-PORTD0" endpinid="Hd44780-3-dataPin0" pointList="192,-16,192,-124,136,-124,136,-136" />
+
+<item itemtype="Connector" uid="Connector-3" startpinid="mega328-1-PORTD2" endpinid="Hd44780-3-dataPin2" pointList="176,-16,176,-112,152,-112,152,-136" />
+
+<item itemtype="Connector" uid="Connector-4" startpinid="mega328-1-PORTD3" endpinid="Hd44780-3-dataPin3" pointList="168,-16,168,-128,160,-128,160,-136" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="mega328-1-PORTD4" endpinid="Hd44780-3-dataPin4" pointList="160,-16,160,-120,168,-120,168,-136" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="mega328-1-PORTD5" endpinid="Hd44780-3-dataPin5" pointList="120,-16,120,-116,176,-116,176,-136" />
+
+<item itemtype="Connector" uid="Connector-7" startpinid="mega328-1-PORTD6" endpinid="Hd44780-3-dataPin6" pointList="112,-16,112,-112,184,-112,184,-136" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="mega328-1-PORTD7" endpinid="Hd44780-3-dataPin7" pointList="104,-16,104,-104,192,-104,192,-136" />
+
+<item itemtype="Connector" uid="Connector-9" startpinid="Hd44780-3-PinRS" endpinid="mega328-1-PORTB0" pointList="112,-136,96,-136,96,-16" />
+
+<item itemtype="Connector" uid="Connector-10" startpinid="Hd44780-3-PinEn" endpinid="mega328-1-PORTB1" pointList="128,-136,128,-124,56,-124,56,32,96,32" />
+
+<item itemtype="Connector" uid="Connector-11" startpinid="Hd44780-3-PinRW" endpinid="Ground-6-Gnd" pointList="120,-136,120,-128,4,-128,4,-120" />
+
+<item itemtype="Connector" uid="Connector-12" startpinid="Potentiometer-5-PinA" endpinid="Fixed Voltage-4-outnod" pointList="-76,-68,-120,-68" />
+
+<item itemtype="Connector" uid="Connector-14" startpinid="Potentiometer-5-PinB" endpinid="Ground-7-Gnd" pointList="-44,-68,-16,-68,-16,-56,-20,-56" />
+
+<item itemtype="Connector" uid="Connector-15" startpinid="Potentiometer-5-PinM" endpinid="mega328-1-PORTC1" pointList="-60,-52,-60,60,168,60,168,32" />
+
+</circuit>
