@@ -3,22 +3,10 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-// Segmentos a-g conectados a PORTD (pines 2-8 de Arduino)
-// Pin 2 (PD2) = segmento a
-// Pin 3 (PD3) = segmento b
-// Pin 4 (PD4) = segmento c
-// Pin 5 (PD5) = segmento d
-// Pin 6 (PD6) = segmento e
-// Pin 7 (PD7) = segmento f
-// Pin 8 (PB0) = segmento g
-
-// Pin 9 (PB1) = Pulsador
-
-// Variables
 volatile uint8_t contador = 0;
 volatile uint8_t estadoBotonAnterior = 0;
 
-// Los bits representan: g-f-e-d-c-b-a (bit 6 al bit 0)
+
 const uint8_t tablaNumeros[10] = {
   0b00111111,  // 0: a,b,c,d,e,f encendidos
   0b00000110,  // 1: b,c encendidos
@@ -32,7 +20,7 @@ const uint8_t tablaNumeros[10] = {
   0b01101111   // 9: a,b,c,d,f,g encendidos
 };
 
-//  inicialización
+
 void setup() {
   // PORTD pines 2-7 (PD2-PD7) como salida
   DDRD |= 0b11111100;  // Bits 7,6,5,4,3,2 como salida
@@ -42,20 +30,20 @@ void setup() {
   
   PORTB |= (1 << PORTB1);
   
-  // Inicializar el display en 0
+  
   mostrarNumero(contador);
   
-  // Inicializar UART para debug
+  
   inicializarUART();
   transmitirCadena("Sistema Iniciado\r\n");
 }
 
 //principal
 void loop() {
-  // Con pull-up: botón presionado = LOW, botón suelto = HIGH
+  
   uint8_t estadoBotonActual = (PINB & (1 << PINB1)) ? 0 : 1;
   
-  // Detectar flanco de subida (transición de no presionado a presionado)
+  
   if (estadoBotonActual && !estadoBotonAnterior) {
     // Antirrebote por software
     _delay_ms(50);
@@ -102,14 +90,10 @@ void mostrarNumero(uint8_t num) {
   
   uint8_t patron = tablaNumeros[num];
   
-  // Extraer bits individuales y escribir en los puertos
-  // Segmentos a-f están en PORTD (bits 2-7)
-  // Primero limpiamos los bits relevantes de PORTD (bits 2-7)
+ 
   PORTD &= 0b00000011;
   
-  // Luego escribimos los nuevos valores
-  // Desplazamos el patrón 2 posiciones a la izquierda porque 
-  // los segmentos empiezan en PD2
+  
   PORTD |= ((patron & 0b00111111) << 2);
   
   // Segmento g está en PORTB bit 0
@@ -155,7 +139,7 @@ void transmitirNumero(uint8_t num) {
   transmitirByte('0' + num);
 }
 
-// Punto de entrada del programa
+
 int main(void) {
   setup();
   
